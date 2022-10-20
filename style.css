@@ -1,0 +1,184 @@
+:root{
+    --text-color: #f5c3c2;
+    --cta-font: 'Josefin Sans', sans-serif;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    font-size: var(--cta-font);
+    background-image: url(images/bg-pattern-desktop.svg);
+}
+
+.desktop{
+    display: none;
+}
+
+.grid{
+    display: grid;
+    grid-template-rows: -.5fr 1fr 2fr;
+}
+
+header{
+    padding: 1.25rem;
+}
+
+.logo{
+    width: 30%;
+}
+
+/* Hero Image */
+.hero{
+    height: 200px;
+    background-image: url(images/hero-mobile.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+
+/* Content Styling */
+
+.content{
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-evenly;
+    width: 77%;
+    height: 350px;
+    margin: auto;
+}
+
+h1{
+    text-transform: uppercase;
+    font-family: var(--cta-font);
+    letter-spacing: 10px;
+    line-height: 1.2;
+    font-size: 30px;
+}
+
+span.pink{
+    font-weight: 200;
+    font-size: 28px;
+}
+
+.pink{
+    color: var(--text-color);
+}
+
+p{
+    font-family: var(--cta-font);
+    font-weight: 200;
+    font-size: 15px;
+    line-height: 1.3;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+/* input Styling */
+
+form{
+    position: relative;
+    top: 5px;
+}
+
+input{
+    text-align: left;
+    padding: .85rem 1rem;
+    width: 70vw;
+    border-radius: 30px;
+    border: var(--text-color) solid 1px;
+}
+
+.arrow{
+    position: absolute;
+    border: none;
+    background-color: var(--text-color);
+    padding: .70rem 1.5rem;
+    border-radius: 50px;
+    right: -19px;
+    top: 0;
+    box-shadow: 1em 0 2em var(--text-color);
+}
+
+.arrow:hover{
+    cursor: pointer;
+    box-shadow: 40px var(--text-color);
+}
+
+.error-message{
+    display: none;
+    position: absolute;
+    right: 60px;
+    top: 0%;
+    transform: translate(50%, 50%);
+}
+
+@media only screen and (min-width: 680px){
+
+    header {
+        padding: 1.25rem 0;
+    }
+
+    .mobile{
+        display: none;
+    }
+
+    .desktop{
+        display: block;
+    }
+    
+    .desktop-container{
+        margin-bottom: 5rem;
+    }
+
+    h1{
+        margin-bottom: 2rem;
+        font-size: 40px;
+    }
+
+    span.pink{
+        font-size: 35px;
+    }
+
+
+    .grid{
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: 0.5fr 1fr;
+        height: 100%;
+    }
+
+    .hero{
+        background-image: url(images/hero-desktop.jpg);
+        grid-column: 4/ -1;
+        grid-row: 1 / 3;
+        height: 100%;
+    }
+
+    .content{
+        text-align: left;
+        grid-column: 1 / 4;
+        grid-row: 1 / 3;
+        height: 100%;
+        margin-bottom: 10rem;
+        width: 60%;
+    }
+
+    p{
+        margin-bottom: 2rem;
+        line-height: 1.4;
+    }
+
+    input {
+        width: 93%;
+    }
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
